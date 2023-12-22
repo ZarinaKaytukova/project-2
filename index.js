@@ -39,6 +39,11 @@ const playGame = () => {
   if (playAgain === 'да') {
     return playGame();
   }
+  let score = 0;
+  if (determineWinner(userChoice, computerChoice).includes('Вы победили!')) {
+    score += 1;
+  }
+  console.log(`Ваш счёт: ${score}`);
   return ('Спасибо за игру! До встречи!');
 };
 
